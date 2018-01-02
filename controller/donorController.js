@@ -8,4 +8,6 @@ const deleteDonor = function(req, res){};
 
 const updateDonor = function(req, res){};
 
-export { createDonor, donorDetail, deleteDonor, updateDonor};
+const searchDonor = function (req, res) {};
+
+export { createDonor, donorDetail, deleteDonor, updateDonor, searchDonor};
