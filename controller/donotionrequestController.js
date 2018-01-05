@@ -8,4 +8,9 @@ const deleteDonotionRequest = function(req, res){};
 
 const donotionRequest = function(req, res){};
 
-export { createDonotionRequest, updateDonotionRequest, deleteDonotionRequest, donotionRequest};
+module.exports = {
+  createDonotionRequest : createDonotionRequest,
+  updateDonotionRequest : updateDonotionRequest,
+  deleteDonotionRequest : deleteDonotionRequest,
+  donotionRequest : donotionRequest,
+};

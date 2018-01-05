@@ -7,7 +7,7 @@ const donotionrequestSchema = new Schema({
   "ownerId" : { type: Schema.ObjectId, ref: "donor", required: true},
   "bloodGroup" : { type: String, required: true},
   "message" : {type : String, required: true},
-  "donor" : [{{ type: Schema.ObjectId, ref: "donor"}],
+  "donor" : [{ type: Schema.ObjectId, ref: "donor"}],
   "dateOfRequest" : { type : Date, default : Date.now()},
   "isAlive" : { type : Boolean, default : true}
 });

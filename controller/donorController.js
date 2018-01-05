@@ -10,4 +10,10 @@ const updateDonor = function(req, res){};
 
 const searchDonor = function (req, res) {};
 
-export { createDonor, donorDetail, deleteDonor, updateDonor, searchDonor};
+module.exports = {
+  createDonor : createDonor,
+  donorDetail : donorDetail,
+  deleteDonor : deleteDonor,
+  updateDonor : updateDonor,
+  searchDonor : searchDonor,
+};

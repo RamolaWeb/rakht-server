@@ -9,6 +9,6 @@ router.post("/create", donotionrequestController.createDonotionRequest);
 
 router.delete("/remove/:id", donotionrequestController.deleteDonotionRequest);
 
-router.update("/update/:id", donotionrequestController.updateDonotionRequest);
+router.put("/update/:id", donotionrequestController.updateDonotionRequest);
 
-module.export = router;
+module.exports = router;
