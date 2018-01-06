@@ -15,9 +15,11 @@ router.post("/create",[
   check("bloodGroup", "Blood Group of Donor Must not be Empty").isLength({min: 1}),
 ],donorController.createDonor);
 
-router.put("/update/:id", donorController.updateDonor);
+router.get("/update", donorController.updateDonorForm);
 
-router.delete("/remove/:id", donorController.deleteDonor);
+router.post("/update", donorController.updateDonor);
+
+router.post("/remove/:id", donorController.deleteDonor);
 
 router.get("/create", donorController.createDonorForm);
 

@@ -37,12 +37,39 @@ const donorDetail = function(req, res, next){
 
 const deleteDonor = function(req, res, next){};
 
-const updateDonor = function(req, res, next){};
+const updateDonor = function(req, res, next){
+  const id = req.body.id;
+  let user = {};
+  if(req.body.name) user.name = req.body.name;
+  if(req.body.address) user.address = req.body.address;
+  if(req.body.email) user.email = req.body.email;
+  if(req.body.phoneNumber) user.phoneNumber = req.body.phoneNumber;
+  if(req.body.bloodGroup) user.bloodGroup = req.body.bloodGroup;
+  if(req.body.registerationNumber) user.registerationNumber = req.body.registerationNumber;
+  donor.findByIdAndUpdate(id, user, function(err, result){
+    if(err){
+      const response = {
+        status: false,
+        message: "Could Not Found Donor By Given Id"
+      };
+      return res.json(response);
+    }
+    const response = {
+      status: true,
+      message: "Succesfully Updated the Information of "+result.name
+    };
+    return res.json(response);
+  });
+};
 
 const searchDonor = function (req, res, next) {};
 
 const createDonorForm = function(req, res, next) {
   res.render("donorform");
+};
+
+const updateDonorForm = function(req, res, next) {
+  res.render("updateDonorForm");
 };
 
 
@@ -53,4 +80,5 @@ module.exports = {
   updateDonor : updateDonor,
   searchDonor : searchDonor,
   createDonorForm : createDonorForm,
+  updateDonorForm : updateDonorForm,
 };
