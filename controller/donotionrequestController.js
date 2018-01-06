@@ -48,7 +48,16 @@ donorrequest.findByIdAndUpdate(id, doReq, function(err, user){
 const deleteDonotionRequest = function(req, res){};
 
 const donotionRequest = function(req, res){
-
+donorrequest.find().exec(function(err, result){
+  if(err){
+    const response = {
+      status: false,
+      message: "Could Not Found Donor By Given Id"
+    };
+    return res.json(response);
+  }
+  return res.json(result);
+});
 };
 
 const createDonotionRequestForm = function(req, res){
