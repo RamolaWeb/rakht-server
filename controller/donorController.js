@@ -22,7 +22,17 @@ const createDonor = function(req, res, next){
 };
 
 const donorDetail = function(req, res, next){
-  res.send("Not Yet Implemented");
+  const id = req.params.id;
+  donor.findById(id, function(err, donor){
+    if(err) {
+      const response = {
+        status: false,
+        message: "Could Not Found Donor By Given Id"
+      };
+      return res.json(response);
+    }
+    return res.json(donor);
+  });
 };
 
 const deleteDonor = function(req, res, next){};
