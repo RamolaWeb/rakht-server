@@ -5,10 +5,14 @@ const router = express.Router();
 
 router.get("/", donotionrequestController.donotionRequest);
 
+router.get("/create", donotionrequestController.createDonotionRequestForm);
+
 router.post("/create", donotionrequestController.createDonotionRequest);
 
 router.delete("/remove/:id", donotionrequestController.deleteDonotionRequest);
 
-router.put("/update/:id", donotionrequestController.updateDonotionRequest);
+router.get("/update", donotionrequestController.updateDonotionRequestForm);
+
+router.post("/update", donotionrequestController.updateDonotionRequest);
 
 module.exports = router;
